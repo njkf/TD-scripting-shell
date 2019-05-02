@@ -1,0 +1,21 @@
+#!/bin/bash
+
+echo entrez un nombre entre 1 et 1000
+
+randomnb=$RANDOM
+((randomnb=$randomnb/32,765))
+tentative=1
+
+read a 
+while test $a -ne $randomnb
+do
+if test $a _lt $randomnb
+then echo nombre plus grand
+read a 
+elif test $a -gt $randomnb
+then echo nombre plus petit
+read a
+fi
+((tentative+=1))
+done; echo "nice"
+echo vous avez fait $tentative tentatives
